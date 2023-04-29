@@ -1,0 +1,26 @@
+<script>
+	/*
+	function titleCase(str) {
+	    return str.split(" ")
+	    .map((element) => element[0].toUpperCase() + element.slice(1).toLowerCase())
+	    .join(" ");
+	}
+	*/
+
+	/*
+	function titleCase(str){
+		return str.toLowerCase()
+		.split(" ")
+		.map(element => element.replace(element.charAt[0], element.charAt[0].toUpperCase()))
+		.join(" ");
+	}
+	*/
+
+	function titleCase(str){
+		return str.toLowerCase()
+		.replace(/(^|\s)\S/g, l => l.toUpperCase()); ///(^|\s)\S/g which is,
+														///Find all non-space character(\S) at the beginnig(^) of a string or after a whitespace character(\s) 
+	}
+
+	console.log(titleCase("I'm a little tea pot"));
+</script>

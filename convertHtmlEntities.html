@@ -1,0 +1,27 @@
+<script>
+	function convertHTML(str) {
+  let obj = {
+    "&" : "&amp;",
+    "<" : "&lt;",
+    ">" : "&gt;",
+    "\"" : "&quot;",
+    "'" : "&apos;"
+  }
+  /*
+  return str.split("")
+  .map(item => {
+    return ((/[&<>"'']/).test(item)) ? obj[item.match(/[&<>"'']/)] : item;
+  })
+  .join("");
+  */
+
+  ///return str.replace(/([&<>"'])/g, match => obj[match]);
+
+  return str.split("")
+  .map(item => obj[item] || item)
+  .join("");
+
+}
+
+console.log(convertHTML("Schindler's List"));
+</script>

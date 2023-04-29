@@ -1,0 +1,20 @@
+<script>
+	function telephoneCheck(str) {
+	  str = str.replace(/\s/g, "");
+	  let count = 0;
+	  str.split("").forEach (item =>{
+	    if(item >= "0" && item <= "9") count++;
+	  });
+	  console.log(count)
+	  if(count !== 10 && count !==11) return false;
+	  if(count === 10){
+	    return (/^\d{3}-\d{3}-\d{4}|\(\d{3}\)\d{3}-\d{4}|\d{10}$/).test(str);
+	  }
+	  if(count === 11){
+	    return (/^1\d{3}-\d{3}-\d{4}|^1\(\d{3}\)\d{3}-\d{4}|^1\d{10}$/).test(str);
+	  }
+
+	}
+
+	console.log(telephoneCheck("(6054756961)"));
+</script>

@@ -1,0 +1,9 @@
+<script>
+  function factorialize(num) {
+    return num < 0 ? 1 :
+      new Array(num)
+        .fill(undefined)
+        .reduce((product, _, index) => product * (index + 1), 1);
+  }
+  console.log(factorialize(5));
+</script>

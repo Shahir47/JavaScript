@@ -1,0 +1,23 @@
+<script>
+
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+
+}
+//Rectangle.prototype.area = () => {return this.w * this.h};
+class Square extends Rectangle{
+	constructor(a){
+		super(a, a);
+	}
+	get(){
+		console.log(this.w, this.h);
+	}
+}
+
+let seq = new Square(3);
+seq.get();
+
+</script>

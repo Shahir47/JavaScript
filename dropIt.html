@@ -1,0 +1,19 @@
+<script>
+	/*
+function dropElements(arr, func) {
+  for(let i=0; i<arr.length; i++){
+    if(func(arr[i])) return arr;
+    arr.shift(); i--;
+  }
+  return arr;
+}
+*/
+
+function dropElements(arr, func, i = 0){
+  return i < arr.length && !func(arr[0])
+  ? dropElements(arr.slice(1), func, 0)
+  : arr;
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}));
+</script>

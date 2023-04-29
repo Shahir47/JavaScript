@@ -1,0 +1,19 @@
+<script>
+	function steamrollArray(arr) {
+  /*
+  return arr.every(item => !Array.isArray(item))
+  ? arr : steamrollArray(arr.reduce((newArr,ele) => {
+    if(Array.isArray(ele))
+      newArr.push(...ele);
+    else newArr.push(ele);
+    return newArr;
+  },[]));
+  */
+
+  let flatArr = [].concat(...arr);
+  return flatArr.some(Array.isArray)
+  ? steamrollArray(flatArr) : flatArr;
+}
+
+console.log(steamrollArray([1, {}, [3, [[4]]]]));
+</script>

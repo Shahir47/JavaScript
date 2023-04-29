@@ -1,0 +1,19 @@
+<script>
+	function isPrime(num){ ///finds all the prime up to num
+		let arr = new Array(num+1).fill(true);
+		arr[0] = false;
+		arr[1] = false;
+		for(let i=2; i<=Math.sqrt(num); i++){
+			if(arr[i]){
+				for(let j=i*i; j<=num; j += i){
+					arr[j] = false;
+				}
+			}
+		}
+		return arr.map((item, ind) =>{
+			if(item) return ind;
+		})
+		.filter(item => typeof(item) === "number");
+	}
+	console.log(isPrime(15));
+</script>>

@@ -1,0 +1,33 @@
+<script>
+	function confirmEnding(str, target) {
+	  /* //Method1 ==> 
+	  for(let i=0; i<target.length; i++){
+	    if(str[str.length-(i+1)] != target[target.length-(i+1)])
+	      return false;
+	  }
+	  return true;
+	  */
+
+	  //Method2 ==>
+	  /*
+	  return str.endsWith(target);
+	  */
+
+	  //Method3 ==>
+	  /*
+	  return str.slice(str.length - target.length) === target;
+	  */
+
+	   //Method4 ==>
+	  /*
+	  return str.slice(-target.length) === target;
+	  */
+
+	  //Method5 ==>
+	  let regex = new RegExp(target + '$');
+	  return regex.test(str);
+	  
+	}
+
+	confirmEnding("Bastian", "n");
+</script>

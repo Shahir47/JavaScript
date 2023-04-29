@@ -1,0 +1,36 @@
+<script>
+	function telephoneCheck(str) {
+  	let s = "";
+  	let bracket = 0, hysp = 0;
+  	for(let i=0; i<str.length; i++)
+  	{
+  		if((str[i]>="0" && str[i]<="9") || str[i]=="(" || str[i]==")") s += str[i];
+  		if(str[i] == "(" || str[i] == ")") bracket++;
+  		if(str[i] == "-" || str[i] == " ") hysp++;
+  	}
+  	if(str[0] == "-") console.log("false");
+  	if(hysp>3) console.log("false");
+  	else if(s.length<10 || s.length>13) console.log("false");
+  	else
+  	{
+  		if(bracket!=2 && bracket!=0) console.log("false");
+  		else{
+  			if(bracket==0)
+  			{
+  				if(s.length == 10) console.log("true");
+  				else if(s.length == 11 && s[0] == 1) console.log("true");
+  				else console.log("false");
+  			}
+  			else
+  			{
+  				if(s.length == 12 && s[0]=="(" && s[4]==")") console.log("true");
+  				else if(s.length == 13 && s[0] == 1 && s[1]=="(" && s[5]==")") console.log("true");
+  				else console.log("false");
+  			}
+  		}
+  	}
+  	console.log(s);
+}
+
+telephoneCheck("2 (757) 622-7382");
+</script>

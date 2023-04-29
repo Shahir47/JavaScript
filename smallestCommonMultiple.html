@@ -1,0 +1,26 @@
+<script>
+	function smallestCommons(arr) {
+  /*
+  let scm = 1;
+  for(let i=Math.min(...arr); i<=Math.max(...arr); i++){
+    scm = lcm(scm, i);
+  }
+  return scm;
+  */
+  let [min, max] = arr.sort((a, b) => a-b);
+  return Array(max-min+1).fill(0)
+  .map((_,ind) => ind+min)
+  .reduce((scm, item) => lcm(scm,item));
+}
+
+function lcm(a, b){
+  return ((a*b)/gcd(a,b));
+}
+
+function gcd(a, b){
+  if(b === 0) return a;
+  return gcd(b, Math.floor(a%b));
+}
+
+console.log(smallestCommons([1,5]));
+</script>

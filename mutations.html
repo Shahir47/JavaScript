@@ -1,0 +1,29 @@
+<script>
+function mutation(arr) {
+	/*
+	let m = new Array(26).fill(0);
+	let str1 = arr[0].toLowerCase();
+	let str2 = arr[1].toLowerCase();
+
+	for(let i=0; i<str2.length; i++){
+		m[(str2.charCodeAt(i) - 97)]++;
+	}
+
+  	for(let i=0; i<str1.length; i++){
+  		if(m[(str1.charCodeAt(i) - 97)] > 0)
+  			m[(str1.charCodeAt(i) - 97)] = 0;
+  	}
+
+  	for(let i=0; i<26; i++){
+  		if(m[i] != 0) return false;
+  	}
+  	return true;
+  	*/
+
+  	return arr[1].toLowerCase()
+    .split("")
+    .every(element => arr[0].toLowerCase().indexOf(element) !== -1);
+}
+
+console.log(mutation(["hello", "hey"]));
+</script>

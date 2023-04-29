@@ -1,0 +1,33 @@
+<script>
+
+/*
+function chunkArrayInGroups(arr, size) {
+  let temp = [];
+  while(arr.length >= size){
+  	temp.push(arr.slice(0,size));
+  	arr.splice(0,size);
+  }
+  if(arr.length != 0) temp.push(arr);
+  return temp;
+}
+*/
+
+/*
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  let newArr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArr.push(arr.slice(i, i + size));
+  }
+  return newArr;
+}
+*/
+
+function chunkArrayInGroups(arr, size){
+  if(arr.length <= size)
+    return [arr];
+  return [arr.slice(0,size)].concat(chunkArrayInGroups(arr.slice(size), size));
+}
+
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
+</script>

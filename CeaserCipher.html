@@ -1,0 +1,21 @@
+<script>
+	function rot13(str) {
+	  let str_new = "";
+	  for(let i=0; i<str.length; i++)
+	  {
+	  	if((str[i]>="A" && str[i]<="Z") || (str[i]>="a" && str[i]<="z"))
+	  	{
+	  		let x = str.charCodeAt(i);
+	  		let y = x - 13;
+	  		if(x<=90 && y<65) y += 26;
+	  		if(x>=97 && y<97) y += 26;
+	  		let temp = String.fromCharCode(y);
+	  		str_new += temp;
+	  	}
+	  	else str_new += str[i];
+	  }
+	  console.log(str_new);
+	}
+
+	rot13("SERR PBQR PNZC");
+</script>
